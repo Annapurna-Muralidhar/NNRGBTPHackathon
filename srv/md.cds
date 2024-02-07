@@ -74,6 +74,16 @@ annotate Market.Business_Partner with @(
             Label: 'GSTIN Number',
             Value: Gst_num
         },
+         {
+            Label: 'GSTIN Number',
+            Value: Is_vendor
+        },
+        {
+            Label: 'GSTIN Number',
+            Value: Is_customer
+            
+        },
+        
     ],
     UI.FieldGroup #BusinessP: {
         $Type: 'UI.FieldGroupType',
