@@ -28,6 +28,8 @@ entity Business_Partner {
     Is_customer:Boolean default false;
 }
 
+
+
 entity Store {
     key ID: UUID;
     store_id :String(10);
