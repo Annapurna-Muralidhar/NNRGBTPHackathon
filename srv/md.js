@@ -7,6 +7,7 @@ module.exports = cds.service.impl(async function () {
       });
     this.before("CREATE",  Business_Partner, async (req) => {
         const { bp_no, Is_gstn_registered, Gst_num } = req.data;
+        bp_no=bp_no+1;
         if (Is_gstn_registered && !Gst_num) {
             req.error({
                 code: "MISSING_GST_NUM",
