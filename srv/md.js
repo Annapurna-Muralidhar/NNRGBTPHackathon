@@ -7,8 +7,6 @@ module.exports = cds.service.impl(async function () {
       });
     this.before("CREATE",  Business_Partner, async (req) => {
         const { bp_no, Is_gstn_registered, Gst_num } = req.data;
-
-      
         if (Is_gstn_registered && !Gst_num) {
             req.error({
                 code: "MISSING_GST_NUM",
@@ -17,7 +15,7 @@ module.exports = cds.service.impl(async function () {
             });
         }
         const query1 = SELECT.from( Business_Partner).where({ bp_no: req.data.bp_no });
-        const result = await cds.run(query1); 
+        const result = await cds.run(query1); // Execute the query using cds.run()
         if (result.length > 0) {
           req.error({
             code: "STEMAILEXISTS",
